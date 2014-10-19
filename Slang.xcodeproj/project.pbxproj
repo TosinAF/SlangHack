@@ -15,26 +15,23 @@
 		4E62037B19F36AA100C650BC /* SLIfCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62037519F36AA100C650BC /* SLIfCondition.swift */; };
 		4E62037C19F36AA100C650BC /* SLPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62037619F36AA100C650BC /* SLPrint.swift */; };
 		4E62038119F36F9000C650BC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62038019F36F9000C650BC /* TableViewCell.swift */; };
+		4E62038319F392EF00C650BC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E62038219F392EF00C650BC /* MobileCoreServices.framework */; };
+		4E62038619F3930600C650BC /* ENSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4E62038419F3930600C650BC /* ENSDKResources.bundle */; };
+		4E62038719F3930600C650BC /* ENSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E62038519F3930600C650BC /* ENSDK.framework */; };
+		4E62038919F3931700C650BC /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E62038819F3931700C650BC /* libxml2.dylib */; };
+		4E62038B19F3940800C650BC /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62038A19F3940800C650BC /* NoteViewController.swift */; };
+		4E62038D19F3942E00C650BC /* SLLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E62038C19F3942E00C650BC /* SLLogin.swift */; };
+		4E62039019F394D400C650BC /* media23.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E62038E19F394D400C650BC /* media23.png */; };
+		4E62039119F394D400C650BC /* note32.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E62038F19F394D400C650BC /* note32.png */; };
 		4EF4B94419F2F5E40012BFB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF4B94319F2F5E40012BFB6 /* AppDelegate.swift */; };
 		4EF4B94619F2F5E40012BFB6 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF4B94519F2F5E40012BFB6 /* RootViewController.swift */; };
 		4EF4B94B19F2F5E40012BFB6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EF4B94A19F2F5E40012BFB6 /* Images.xcassets */; };
 		4EF4B94E19F2F5E40012BFB6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EF4B94C19F2F5E40012BFB6 /* LaunchScreen.xib */; };
-		4EF4B95A19F2F5E40012BFB6 /* SlangTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF4B95919F2F5E40012BFB6 /* SlangTests.swift */; };
 		4EF4B96619F2FD1E0012BFB6 /* FiraSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4EF4B96519F2FD1E0012BFB6 /* FiraSans-Regular.otf */; };
 		4EF4B96919F305100012BFB6 /* SLBlankLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF4B96819F305100012BFB6 /* SLBlankLineTableViewCell.swift */; };
 		4EF4B96B19F30E600012BFB6 /* SLVariableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF4B96A19F30E600012BFB6 /* SLVariableTableViewCell.swift */; };
 		75DB1634BD18C44DE806CE85 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0184710AEC69B78B6769AD4E /* libPods.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		4EF4B95419F2F5E40012BFB6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4EF4B93619F2F5E40012BFB6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4EF4B93D19F2F5E40012BFB6;
-			remoteInfo = Slang;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0184710AEC69B78B6769AD4E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,14 +44,20 @@
 		4E62037519F36AA100C650BC /* SLIfCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLIfCondition.swift; sourceTree = "<group>"; };
 		4E62037619F36AA100C650BC /* SLPrint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLPrint.swift; sourceTree = "<group>"; };
 		4E62038019F36F9000C650BC /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		4E62038219F392EF00C650BC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		4E62038419F3930600C650BC /* ENSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ENSDKResources.bundle; sourceTree = "<group>"; };
+		4E62038519F3930600C650BC /* ENSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ENSDK.framework; sourceTree = "<group>"; };
+		4E62038819F3931700C650BC /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		4E62038A19F3940800C650BC /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		4E62038C19F3942E00C650BC /* SLLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLLogin.swift; sourceTree = "<group>"; };
+		4E62038E19F394D400C650BC /* media23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = media23.png; sourceTree = "<group>"; };
+		4E62038F19F394D400C650BC /* note32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note32.png; sourceTree = "<group>"; };
 		4EF4B93E19F2F5E40012BFB6 /* Slang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF4B94219F2F5E40012BFB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EF4B94319F2F5E40012BFB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EF4B94519F2F5E40012BFB6 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4EF4B94A19F2F5E40012BFB6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4EF4B94D19F2F5E40012BFB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		4EF4B95319F2F5E40012BFB6 /* SlangTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlangTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4EF4B95819F2F5E40012BFB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EF4B95919F2F5E40012BFB6 /* SlangTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlangTests.swift; sourceTree = "<group>"; };
 		4EF4B96519F2FD1E0012BFB6 /* FiraSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraSans-Regular.otf"; sourceTree = "<group>"; };
 		4EF4B96819F305100012BFB6 /* SLBlankLineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLBlankLineTableViewCell.swift; sourceTree = "<group>"; };
@@ -68,14 +71,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E62038919F3931700C650BC /* libxml2.dylib in Frameworks */,
+				4E62038719F3930600C650BC /* ENSDK.framework in Frameworks */,
+				4E62038319F392EF00C650BC /* MobileCoreServices.framework in Frameworks */,
 				75DB1634BD18C44DE806CE85 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4EF4B95019F2F5E40012BFB6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				4EF4B93E19F2F5E40012BFB6 /* Slang.app */,
-				4EF4B95319F2F5E40012BFB6 /* SlangTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,9 +103,13 @@
 		4EF4B94019F2F5E40012BFB6 /* Slang */ = {
 			isa = PBXGroup;
 			children = (
+				4E62038E19F394D400C650BC /* media23.png */,
+				4E62038F19F394D400C650BC /* note32.png */,
 				4EF4B94319F2F5E40012BFB6 /* AppDelegate.swift */,
 				4EF4B94519F2F5E40012BFB6 /* RootViewController.swift */,
+				4E62038A19F3940800C650BC /* NoteViewController.swift */,
 				4E62038019F36F9000C650BC /* TableViewCell.swift */,
+				4E62038C19F3942E00C650BC /* SLLogin.swift */,
 				4EF4B96719F3049E0012BFB6 /* Views */,
 				4EF4B94A19F2F5E40012BFB6 /* Images.xcassets */,
 				4EF4B94C19F2F5E40012BFB6 /* LaunchScreen.xib */,
@@ -139,7 +141,6 @@
 		4EF4B95719F2F5E40012BFB6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4EF4B95819F2F5E40012BFB6 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -147,6 +148,8 @@
 		4EF4B96319F2FB3C0012BFB6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4E62038419F3930600C650BC /* ENSDKResources.bundle */,
+				4E62038519F3930600C650BC /* ENSDK.framework */,
 				4EF4B96419F2FB470012BFB6 /* Fonts */,
 			);
 			name = Resources;
@@ -187,6 +190,8 @@
 		8CBCF5254D9A00D11FA4C53D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4E62038819F3931700C650BC /* libxml2.dylib */,
+				4E62038219F392EF00C650BC /* MobileCoreServices.framework */,
 				0184710AEC69B78B6769AD4E /* libPods.a */,
 			);
 			name = Frameworks;
@@ -214,24 +219,6 @@
 			productReference = 4EF4B93E19F2F5E40012BFB6 /* Slang.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4EF4B95219F2F5E40012BFB6 /* SlangTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4EF4B96019F2F5E40012BFB6 /* Build configuration list for PBXNativeTarget "SlangTests" */;
-			buildPhases = (
-				4EF4B94F19F2F5E40012BFB6 /* Sources */,
-				4EF4B95019F2F5E40012BFB6 /* Frameworks */,
-				4EF4B95119F2F5E40012BFB6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4EF4B95519F2F5E40012BFB6 /* PBXTargetDependency */,
-			);
-			name = SlangTests;
-			productName = SlangTests;
-			productReference = 4EF4B95319F2F5E40012BFB6 /* SlangTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -243,10 +230,6 @@
 				TargetAttributes = {
 					4EF4B93D19F2F5E40012BFB6 = {
 						CreatedOnToolsVersion = 6.0;
-					};
-					4EF4B95219F2F5E40012BFB6 = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = 4EF4B93D19F2F5E40012BFB6;
 					};
 				};
 			};
@@ -264,7 +247,6 @@
 			projectRoot = "";
 			targets = (
 				4EF4B93D19F2F5E40012BFB6 /* Slang */,
-				4EF4B95219F2F5E40012BFB6 /* SlangTests */,
 			);
 		};
 /* End PBXProject section */
@@ -274,16 +256,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E62039119F394D400C650BC /* note32.png in Resources */,
 				4EF4B94E19F2F5E40012BFB6 /* LaunchScreen.xib in Resources */,
+				4E62038619F3930600C650BC /* ENSDKResources.bundle in Resources */,
+				4E62039019F394D400C650BC /* media23.png in Resources */,
 				4EF4B96619F2FD1E0012BFB6 /* FiraSans-Regular.otf in Resources */,
 				4EF4B94B19F2F5E40012BFB6 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4EF4B95119F2F5E40012BFB6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,8 +306,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EF4B96B19F30E600012BFB6 /* SLVariableTableViewCell.swift in Sources */,
+				4E62038B19F3940800C650BC /* NoteViewController.swift in Sources */,
 				4E62037C19F36AA100C650BC /* SLPrint.swift in Sources */,
 				4E62037719F36AA100C650BC /* SLElse.swift in Sources */,
+				4E62038D19F3942E00C650BC /* SLLogin.swift in Sources */,
 				4E62037A19F36AA100C650BC /* SLForLoop.swift in Sources */,
 				4EF4B94619F2F5E40012BFB6 /* RootViewController.swift in Sources */,
 				4EF4B94419F2F5E40012BFB6 /* AppDelegate.swift in Sources */,
@@ -342,23 +322,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4EF4B94F19F2F5E40012BFB6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4EF4B95A19F2F5E40012BFB6 /* SlangTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4EF4B95519F2F5E40012BFB6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4EF4B93D19F2F5E40012BFB6 /* Slang */;
-			targetProxy = 4EF4B95419F2F5E40012BFB6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4EF4B94C19F2F5E40012BFB6 /* LaunchScreen.xib */ = {
@@ -457,6 +421,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Slang",
+				);
 				HEADER_SEARCH_PATHS = (
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/UIView+draggable\"",
@@ -476,6 +444,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Slang",
+				);
 				HEADER_SEARCH_PATHS = (
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/UIView+draggable\"",
@@ -485,40 +457,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Slang/Slang-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		4EF4B96119F2F5E40012BFB6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SlangTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Slang.app/Slang";
-			};
-			name = Debug;
-		};
-		4EF4B96219F2F5E40012BFB6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SlangTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Slang.app/Slang";
 			};
 			name = Release;
 		};
@@ -539,15 +477,6 @@
 			buildConfigurations = (
 				4EF4B95E19F2F5E40012BFB6 /* Debug */,
 				4EF4B95F19F2F5E40012BFB6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4EF4B96019F2F5E40012BFB6 /* Build configuration list for PBXNativeTarget "SlangTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4EF4B96119F2F5E40012BFB6 /* Debug */,
-				4EF4B96219F2F5E40012BFB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

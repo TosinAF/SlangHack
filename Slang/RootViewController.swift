@@ -158,7 +158,56 @@ class RootViewController: UIViewController {
         return context
     }()
 
+    lazy var createNote: UIButton = {
+        let noteBtn = UIButton()
+        let image = UIImage(named: "note32.png") as UIImage
+        noteBtn.titleLabel?.font = UIFont.systemFontOfSize(13);
+        noteBtn.frame = CGRect(x:320, y:50, width:30, height:30)
+        noteBtn.layer.cornerRadius = 10;
+        noteBtn.setImage(image, forState: .Normal)
+        noteBtn.addTarget(self, action: Selector("buttonAction"), forControlEvents: .TouchUpInside)
+
+        return noteBtn
+        }()
+
+    lazy var playBTN: UIButton = {
+        let play = UIButton()
+        let image = UIImage(named: "media23.png") as UIImage
+        play.titleLabel?.font = UIFont.systemFontOfSize(13);
+        play.frame = CGRect(x:30, y:50, width:30, height:30)
+        play.layer.cornerRadius = 10;
+        play.setImage(image, forState: .Normal)
+        play.addTarget(self, action: Selector("buttonActionPlay"), forControlEvents: .TouchUpInside)
+
+        return play
+        }()
+
+    lazy var NoteController: NoteViewController = {
+        let NoteController = NoteViewController()
+        return NoteController
+        }()
+
+    func buttonAction()
+    {
+
+        // self.navigationController?.pushViewController(self.NoteController, animated: true)
+        self.navigationController?.presentViewController(self.NoteController, animated: true, completion: nil)
+
+    }
+
+    func buttonActionPlay()
+    {
+
+    }
+
+
+
     var log: [AnyObject] = [AnyObject]()
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -167,6 +216,8 @@ class RootViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(tableView)
         view.addSubview(blocksContainer)
+        view.addSubview(playBTN)
+        view.addSubview(createNote)
 
         blocksContainer.addSubview(printBlock)
         blocksContainer.addSubview(variableBlock)
