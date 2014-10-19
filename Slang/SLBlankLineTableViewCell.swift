@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SLBlankLineTableViewCell: UITableViewCell {
+class SLBlankLineTableViewCell: TableViewCell {
 
     lazy var lineNumber: UILabel = {
         let label = UILabel()
@@ -41,7 +41,7 @@ class SLBlankLineTableViewCell: UITableViewCell {
         contentView.addConstraint(NSLayoutConstraint(item: lineNumber, attribute: .CenterY, relatedBy: .Equal, toItem: contentView, attribute: .CenterY, multiplier: 1, constant: 0))
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required override init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

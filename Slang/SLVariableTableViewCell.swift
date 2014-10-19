@@ -8,7 +8,9 @@
 
 import UIKit
 
-class SLVariableTableViewCell: UITableViewCell {
+class SLVariableTableViewCell: TableViewCell {
+
+    var saveBlock: ((name: String, value: String) -> ())?
 
     lazy var containerView: UIView = {
         let view = UIView()
@@ -36,6 +38,7 @@ class SLVariableTableViewCell: UITableViewCell {
     lazy var nameLabel: UITextField = {
         let label = UITextField()
         label.text = "name"
+        label.delegate = self
         //label.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.28)
         //label.layer.cornerRadius = 10.0
         label.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -47,6 +50,7 @@ class SLVariableTableViewCell: UITableViewCell {
     lazy var valueLabel: UITextField = {
         let label = UITextField()
         label.text = "value"
+        label.delegate = self
         label.setTranslatesAutoresizingMaskIntoConstraints(false)
         label.textColor = UIColor.whiteColor()
         label.font = UIFont(name: "FiraSans-Regular", size: 18)
@@ -65,6 +69,7 @@ class SLVariableTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .None
+        type = BlockType.SLVariable
 
         containerView.addSubview(typeLabel)
         containerView.addSubview(nameLabel)
@@ -99,7 +104,14 @@ class SLVariableTableViewCell: UITableViewCell {
 
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required override init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension SLVariableTableViewCell: UITextFieldDelegate {
+
+    func textFieldDidEndEditing(textField: UITextField) {
+        saveBlock?(name: nameLabel.text, value: valueLabel.text)
     }
 }
