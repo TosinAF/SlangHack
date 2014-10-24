@@ -66,6 +66,7 @@ class SLLogin: UIViewController{
             if (error != nil)
             {
                 print("Unsuccessful");
+                self.navigationController?.pushViewController(self.homeViewController, animated: true)
                 
             }else{
                 print("Successful");

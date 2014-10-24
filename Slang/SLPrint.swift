@@ -8,9 +8,15 @@
 
 import UIKit
 
+@objc protocol SLPrintDelegate {
+    func textFieldFinished(slPrint: TableViewCell, text: String)
+}
+
 class SLPrint: TableViewCell {
 
     var saveBlock: ((text: String) -> ())?
+
+    weak var delegate: SLPrintDelegate?
     
     lazy var containerView: UIView = {
         let view = UIView()
@@ -89,5 +95,6 @@ extension SLPrint: UITextFieldDelegate {
 
     func textFieldDidEndEditing(textField: UITextField) {
         saveBlock?(text: printText.text)
+        //self.delegate?.textFieldFinished(self, text: printText.text)
     }
 }

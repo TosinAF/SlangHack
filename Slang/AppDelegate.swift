@@ -11,15 +11,15 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    lazy var homeViewController: RootViewController = {
+    /*lazy var homeViewController: RootViewController = {
         let homeViewController = RootViewController()
         return homeViewController
-    }()
+    }()*/
 
-    /*lazy var homeViewController: SLLogin = {
+    lazy var homeViewController: SLLogin = {
         let homeViewController = SLLogin()
         return homeViewController
-    }()*/
+    }()
 
     lazy var window: UIWindow = {
         let win = UIWindow(frame: UIScreen.mainScreen().bounds)

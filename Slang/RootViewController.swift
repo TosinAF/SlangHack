@@ -54,6 +54,16 @@ class RootViewController: UIViewController {
         return view
     }()
 
+    lazy var console: UITextView = {
+        let view = UITextView()
+        view.editable = false
+        view.font = UIFont(name:"FiraSans-Regular", size:30.0)
+        view.backgroundColor = UIColor.blackColor()
+        view.textColor = UIColor.greenColor()
+        view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        return view
+    }()
+
     let variableFrame = CGRectMake(20, 30, 90, 30);
     let printFrame = CGRectMake(20, 100, 90, 30);
     let elseFrame = CGRectMake(150, 30, 90, 30);
@@ -195,15 +205,6 @@ class RootViewController: UIViewController {
 
     }
 
-    func buttonActionPlay()
-    {
-
-    }
-
-
-
-    var log: [AnyObject] = [AnyObject]()
-
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
         navigationController?.setNavigationBarHidden(true, animated: true)
@@ -218,6 +219,10 @@ class RootViewController: UIViewController {
         view.addSubview(blocksContainer)
         view.addSubview(playBTN)
         view.addSubview(createNote)
+        view.addSubview(console)
+
+        let tap = UITapGestureRecognizer(target: self, action:"dismissKeyboard")
+        self.view.addGestureRecognizer(tap)
 
         blocksContainer.addSubview(printBlock)
         blocksContainer.addSubview(variableBlock)
@@ -231,7 +236,10 @@ class RootViewController: UIViewController {
             "title": titleLabel,
             "tableView": tableView,
             "blocksContainer": blocksContainer,
+            "console": console
         ]
+
+        console.alpha = 0.0
 
         for i in 0..<8 {
             values.append([String: AnyObject]())
@@ -252,12 +260,25 @@ class RootViewController: UIViewController {
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[blocksContainer]|", options: nil, metrics: nil, views: views))
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[blocksContainer]|", options: nil, metrics: nil, views: views))
 
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[console]|", options: nil, metrics: nil, views: views))
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[console]|", options: nil, metrics: nil, views: views))
+
         blocksContainer.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[blocksContainer(220)]", options: nil, metrics: nil, views: views))
+        console.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[console(220)]", options: nil, metrics: nil, views: views))
 
         context.evaluateScript("var console = {};")
 
-        context.store("console", sKey: "log") { (o:ID)->ID in
-            println("\(o)")
+        context.store("console", sKey: "log") { (msg:ID)->ID in
+
+            println("i get called")
+
+            if let m = msg.toString?() {
+                self.console.text = self.console.text + "\(m)\n"
+            } else {
+                self.console.text = self.console.text + "\(msg)\n"
+            }
+
+            self.console.alpha = 1.0
             return nil
         }
 
@@ -274,7 +295,6 @@ class RootViewController: UIViewController {
 
                 if(CGRectIntersectsRect(cFrame, vFrame)) {
                     let ip = self.tableView.indexPathForCell(cell as UITableViewCell)
-                    print(ip!.row)
 
                     switch(v.text!) {
                     case "VARIABLE":
@@ -322,6 +342,29 @@ class RootViewController: UIViewController {
     }
 }
 
+extension RootViewController {
+    func executeJS(code: String) {
+        let result = context.evaluateScript(code)
+    }
+
+    func buttonActionPlay() {
+        //executeJS("console.log(\"I am Tosin Afolabi!!!\"")
+        self.console.text = ""
+        //executeJS("console.log(4*4)")
+        let c = getCode()
+        println(c)
+
+        executeJS(c)
+        //executeJS("console.log(\"Hello World\"")
+    }
+
+    func dismissKeyboard()
+    {
+        self.view.endEditing(true)
+        self.console.alpha = 0.0
+    }
+}
+
 extension RootViewController: UITableViewDelegate, UITableViewDataSource {
 
     // MARK: - TableViewDataSource Methods
@@ -345,6 +388,7 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCellWithIdentifier("blank", forIndexPath: indexPath) as SLBlankLineTableViewCell
             cell.lineNumber.text = "\(indexPath.row + 1)"
             return cell
+
         case .SLVariable:
             let cell = tableView.dequeueReusableCellWithIdentifier("variable", forIndexPath: indexPath) as SLVariableTableViewCell
             cell.lineNumber.text = "\(indexPath.row + 1)"
@@ -360,8 +404,8 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
             }
 
             cell.saveBlock = { (name, v) in
-                value["name"] = name
-                value["value"] = v
+                self.values[indexPath.row]["name"] = name
+                self.values[indexPath.row]["value"] = v
             }
 
             return cell
@@ -386,10 +430,10 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
             }
 
             cell.saveBlock = { (starts, ends, inc) in
-                value = [String: AnyObject]()
-                value["start"] = starts
-                value["stop"] = ends
-                value["inc"] = inc
+                self.values[indexPath.row] = [String: AnyObject]()
+                self.values[indexPath.row]["start"] = starts
+                self.values[indexPath.row]["stop"] = ends
+                self.values[indexPath.row]["inc"] = inc
             }
 
             return cell
@@ -404,8 +448,8 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
             }
 
             cell.saveBlock = { (cond) in
-                value = [String: AnyObject]()
-                value["cond"] = cond
+                self.values[indexPath.row] = [String: AnyObject]()
+                self.values[indexPath.row]["cond"] = cond
             }
 
             return cell
@@ -419,8 +463,8 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
             }
 
             cell.saveBlock = { (cond) in
-                value = [String: AnyObject]()
-                value["condd"] = cond
+                self.values[indexPath.row] = [String: AnyObject]()
+                self.values[indexPath.row]["condd"] = cond
             }
 
             return cell
@@ -434,11 +478,12 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
             }
 
             cell.saveBlock = { (cond) in
-                value = [String: AnyObject]()
-                value["conddd"] = cond
+                self.values[indexPath.row] = [String: AnyObject]()
+                self.values[indexPath.row]["conddd"] = cond
             }
 
             return cell
+
         case .SLPrint:
             let cell = tableView.dequeueReusableCellWithIdentifier("print", forIndexPath: indexPath) as SLPrint
             cell.lineNumber.text = "\(indexPath.row + 1)"
@@ -449,8 +494,8 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
             }
 
             cell.saveBlock = { (text) in
-                value = [String: AnyObject]()
-                value["msg"] = text
+                self.values[indexPath.row] = [String: AnyObject]()
+                self.values[indexPath.row]["msg"] = text
             }
 
             return cell
@@ -472,13 +517,45 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 70
     }
-}
 
-extension RootViewController {
-    func executeJS(code: String) {
-        let result = context.evaluateScript(code)
+    func getCode() -> String {
+
+        println(self.values)
+
+        var code = ""
+
+        for (i,type) in enumerate(ipTypes) {
+            if type == .SLPrint {
+                let val = values[i]
+                let m = val["msg"]! as String
+                code = code + "console.log(\"\(m)\");"
+            }
+
+            else if type == .SLForLoop {
+                let val = values[i]
+                let start = val["start"]! as String
+                let ends = val["stop"]! as String
+                let inc = val["inc"]! as String
+                code = code + "for (var i = \(start); i <= \(ends) ; i++) {"
+            }
+
+            else if type == .SLIF {
+                let val = values[i]
+                let cond = val["cond"]! as String
+                code = code + "if (\(cond)) {"
+            }
+
+
+            else if type == .SLEndIF {
+                code = code + "}\n"
+            }
+        }
+
+        return code
     }
 }
+
+
 
 extension UIColor {
 
